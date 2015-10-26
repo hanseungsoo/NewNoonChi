@@ -1,9 +1,8 @@
 package com.example.han.newnewnoon;
 
 import android.app.ActionBar;
-import android.app.AlarmManager;
 import android.app.FragmentTransaction;
-import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -33,7 +32,6 @@ import net.daum.mf.map.api.MapView;
 
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
@@ -317,5 +315,12 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         protected void onPostExecute(Bitmap result) {
             foodImg.setImageBitmap(result);
         }
+    }
+
+    public void widgetClicked(View v) {
+        Context context = this.getApplicationContext();
+        Intent update = new Intent();
+        update.setAction("chae.widget.update");
+        context.sendBroadcast(update);
     }
 }

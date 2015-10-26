@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.han.newnewnoon" >
+    <uses-sdk android:minSdkVersion="15"/>
 
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.Light.DarkActionBar" >
+        <receiver android:name=".noonWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="chae.widget.update"/>
+                <action android:name="chae.widget.left"/>
+                <action android:name="chae.widget.right"/>
+
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_configuration"/>
+        </receiver>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
