@@ -4,6 +4,8 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationManager;
 import android.util.Log;
 
 import java.util.Calendar;
@@ -58,6 +60,33 @@ public class registerAlarm {
 
             // 서비스 시작
             am.set(AlarmManager.RTC, SI.getSharedTime(index), sender);
+        } catch (Exception e) {
+            Log.d("MpMainActivity", e.getMessage() + "");
+
+            e.printStackTrace();
+        }
+    }
+    public void registerWT(String idIndex){
+        try {
+           /* long now = System.currentTimeMillis();
+            Date data = new Date(now);
+            SimpleDateFormat sdfNow = new SimpleDateFormat("HHmm");
+            String strNow = sdfNow.format(data);*/
+            LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+            Calendar cal = Calendar.getInstance();
+            cal.set(Calendar.SECOND, cal.get(Calendar.SECOND) + 10);
+            long oneHour = 60 * 60 * 1000;
+            Intent intentMyService;
+            intentMyService = new Intent(idIndex);
+            Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+            intentMyService.putExtra("lati",location.getLatitude());
+            intentMyService.putExtra("lon",location.getLongitude());
+
+            AlarmManager am = (AlarmManager) context.getSystemService(context.ALARM_SERVICE);
+            PendingIntent sender = PendingIntent.getBroadcast(context, 0, intentMyService, 0);
+
+            // 서비스 시작
+            am.setRepeating(AlarmManager.RTC, cal.getTimeInMillis(), oneHour, sender);
         } catch (Exception e) {
             Log.d("MpMainActivity", e.getMessage() + "");
 

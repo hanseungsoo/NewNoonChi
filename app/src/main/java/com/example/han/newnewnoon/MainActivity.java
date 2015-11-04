@@ -1,9 +1,8 @@
 package com.example.han.newnewnoon;
 
 import android.app.ActionBar;
-import android.app.AlarmManager;
 import android.app.FragmentTransaction;
-import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -33,7 +32,6 @@ import net.daum.mf.map.api.MapView;
 
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
@@ -61,6 +59,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        make_dummy();
         Intent a = new Intent(this, GpsService.class);
         startService(a);
 
@@ -70,8 +69,9 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         if(!SI.getSharedTrue("isCreate")){
             SI.Init();
             rA.registerInit();
+            rA.registerWT("Weather.a");
         }
-        rA.testAM("ACTION.GET.ONE",10,14);
+        rA.testAM("ACTION.GET.ONE",14,27);
 
         //바인딩
         actionbar = getActionBar();
@@ -84,7 +84,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
         // MapView
         mapView = new MapView(this);
-        mapView.setDaumMapApiKey("5c27579fc750d1e54ced797676373643");
+        mapView.setDaumMapApiKey("63795804fcf1477cdd7226501d8ba39b");
         ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
         mapViewContainer.addView(mapView);
 
@@ -317,5 +317,26 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         protected void onPostExecute(Bitmap result) {
             foodImg.setImageBitmap(result);
         }
+    }
+
+    public void widgetClicked(View v) {
+        Context context = this.getApplicationContext();
+        Intent update = new Intent();
+        update.setAction("chae.widget.update");
+        context.sendBroadcast(update);
+    }
+
+    public void make_dummy() {
+        ArrayList<Item> wg;
+        wg = new ArrayList<Item>();
+        for (int i=1; i<5;i++) {
+            Item item = new Item();
+            item.title = "(X)title"+i;
+            item.category = "(X)category"+i;
+            item.address = "(X)address"+i;
+            item.imageUrl = "http://cfile72.uf.daum.net/image/2125083751B7EEB80E8ECC";
+            wg.add(item);
+        }
+        ThemaItem = wg;
     }
 }
