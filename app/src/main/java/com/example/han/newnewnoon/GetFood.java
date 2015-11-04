@@ -23,6 +23,13 @@ public class GetFood extends BroadcastReceiver {
         a.putExtra("lon", b);
         context.sendBroadcast(a);
     }
+
+    public String getFood(String str){
+
+        String param = "tbName=noon_food&col=food_name&where= food_wea = '"+GetFood.temp+"' and food_time = '"+str+"'";
+        foodDbJson fD = new foodDbJson();
+        return fD.HttpPostData(param);
+    }
     @Override
     public void onReceive(final Context context, Intent intent) {
         this.context = context;
@@ -41,6 +48,8 @@ public class GetFood extends BroadcastReceiver {
                 longitude = location.getLongitude();
                 wantAddr(latitude,longitude);
 
+
+                Log.i("aaaa", getFood("아침"));
 
 
 

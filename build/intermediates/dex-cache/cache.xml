@@ -2,46 +2,46 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\han\Downloads\PortableGit\test\noon\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jar="C:\Users\han\Downloads\PortableGit\test\NewNoonChi\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="C:\Users\han\Downloads\PortableGit\test\noon\app\build\intermediates\pre-dexed\debug\classes-6ee57d0bae335ff0dfbcb3f25b01cd9bb73e6f22.jar" />
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\Users\han\Downloads\PortableGit\test\NewNoonChi\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-d8599f04c0e0527dd84b700144d846561a214951.jar" />
     </item>
     <item
-        jar="C:\Users\han\Downloads\PortableGit\test\noon\app\libs\universal-image-loader-1.9.4.jar"
+        jar="C:\Users\han\Downloads\PortableGit\test\NewNoonChi\app\libs\libDaumMapAndroid.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="dd9eeb557650c4ad7394df23f0f5cf27a7cfc697">
-        <dex dex="C:\Users\han\Downloads\PortableGit\test\noon\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.4-5babfcef38a30d87e8cf5fc668bb0a15e421e16c.jar" />
+        sha1="91c9de067eff6b3e026d21934e91ec45db8cd277">
+        <dex dex="C:\Users\han\Downloads\PortableGit\test\NewNoonChi\app\build\intermediates\pre-dexed\debug\libDaumMapAndroid-818dd4f61394a825f4c927462b8d3d5aabac5be3.jar" />
     </item>
     <item
         jar="C:\Users\han\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="C:\Users\han\Downloads\PortableGit\test\noon\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-b3d1d68d64d8301b5bc8851756bad02975041c39.jar" />
+        <dex dex="C:\Users\han\Downloads\PortableGit\test\NewNoonChi\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-b3d1d68d64d8301b5bc8851756bad02975041c39.jar" />
     </item>
     <item
-        jar="C:\Users\han\Downloads\PortableGit\test\noon\app\libs\libDaumMapAndroid.jar"
+        jar="C:\Users\han\Downloads\PortableGit\test\NewNoonChi\app\libs\universal-image-loader-1.9.4.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="91c9de067eff6b3e026d21934e91ec45db8cd277">
-        <dex dex="C:\Users\han\Downloads\PortableGit\test\noon\app\build\intermediates\pre-dexed\debug\libDaumMapAndroid-920ea5257472c40563ae46a1ddcbeda7b5447661.jar" />
+        sha1="dd9eeb557650c4ad7394df23f0f5cf27a7cfc697">
+        <dex dex="C:\Users\han\Downloads\PortableGit\test\NewNoonChi\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.4-fab923dd4b95495b9d1d00b8694fb5ee29301016.jar" />
     </item>
     <item
-        jar="C:\Users\han\Downloads\PortableGit\test\noon\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jar="C:\Users\han\Downloads\PortableGit\test\NewNoonChi\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="C:\Users\han\Downloads\PortableGit\test\noon\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-1a055e22b07718e7253a94eaede9a1a2529474de.jar" />
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="C:\Users\han\Downloads\PortableGit\test\NewNoonChi\app\build\intermediates\pre-dexed\debug\classes-10e0f7355f318dcd62995b1ba5dfc8acdd60be5c.jar" />
     </item>
     <item
-        jar="C:\Users\han\Downloads\PortableGit\test\noon\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jar="C:\Users\han\Downloads\PortableGit\test\NewNoonChi\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="C:\Users\han\Downloads\PortableGit\test\noon\app\build\intermediates\pre-dexed\debug\classes-2c0541bcd6de786d99a79b8abb6e0a2c4c777903.jar" />
+        <dex dex="C:\Users\han\Downloads\PortableGit\test\NewNoonChi\app\build\intermediates\pre-dexed\debug\classes-0ba0b625950f182f7b353279e4d626b1fca538c3.jar" />
     </item>
 
 </items>

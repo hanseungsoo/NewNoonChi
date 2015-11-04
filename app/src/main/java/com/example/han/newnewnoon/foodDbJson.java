@@ -72,10 +72,8 @@ public class foodDbJson {
             Log.e("DBJSON","IOerror");
         }
 
-        String str = "외부 DB : " + "\r\n";
-        for(int i=0; i<foodDB.size();i++) {
-            str += foodDB.get(i) + " , ";
-        }
+        String str = "";
+        str = foodDB.get(0);
 
         return str;
     }

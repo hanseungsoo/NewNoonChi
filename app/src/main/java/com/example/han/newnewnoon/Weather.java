@@ -83,7 +83,7 @@ public class Weather extends BroadcastReceiver {
                 String exceptionAsStrting = sw.toString();
                 Log.e("aaaa", exceptionAsStrting);
             }
-
+            Log.i("aaaa",GetFood.temp);
             super.onPostExecute(s);
         }
     }
@@ -97,7 +97,6 @@ public class Weather extends BroadcastReceiver {
             lon = params[1];
             try {
                 String UUU = "https://apis.daum.net/local/geo/coord2detailaddr?apikey=9a28f8d9f0c4e2a8d24328d040411004&x="+lon+"&y="+lati+"&inputCoordSystem=WGS84&output=json";
-                Log.i("aaaa", "----------------------------- 마임4"+UUU);
                 URL url = new URL(UUU);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setReadTimeout(4000 /* milliseconds */);
@@ -105,7 +104,6 @@ public class Weather extends BroadcastReceiver {
                 conn.setRequestMethod("GET");
                 conn.setDoInput(true);
                 conn.connect();
-                Log.i("aaaa", "----------------------------- 마임3");
 
                 InputStream is = conn.getInputStream();
                 Scanner s = new Scanner(is);
@@ -116,7 +114,6 @@ public class Weather extends BroadcastReceiver {
                 return str;
             }
             catch(Exception t) {
-                Log.i("aaaa", "----------------------------- 마임2" );
                 StringWriter sw = new StringWriter();
                 t.printStackTrace(new PrintWriter(sw));
                 String exceptionAsStrting = sw.toString();
