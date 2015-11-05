@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
@@ -160,21 +161,30 @@ public class noonWidget extends AppWidgetProvider {
         updateViews = new RemoteViews(context.getPackageName(), layoutId);
         updateViews.setTextViewText(R.id.widget_tv, thema);
         item = contentValue(MainActivity.ThemaItem, thema);
-
-        Log.i("widget", "before configure : " + MainActivity.ThemaItem.get(0).title);
+        String ph = item.phone;
+        String[] phn = ph.split("[-]");
+        ph = "";
+        for(int i=0; i<phn.length; i++) {
+            ph += phn[i];
+        }
+        Log.i("widget", "before configure : " + ph);
         configureLayout(content, item);
         Intent left_intent = new Intent();
         Intent right_intent = new Intent();
         Intent click_intent = new Intent();
+        Intent call_intent = new Intent();
         left_intent.putExtra("T_value", themaValue);
         right_intent.putExtra("T_value", themaValue);
         left_intent.setAction("chae.widget.left");
         right_intent.setAction("chae.widget.right");
-        //click_intent.putExtra("cur_Time", Calendar.getInstance().get(Calendar.HOUR));
         click_intent.setAction("chae.widget.click");
+        call_intent.setAction(android.content.Intent.ACTION_DIAL);
+        call_intent.setData(Uri.parse("tel:"+item.phone));
         PendingIntent pendingIntent_L = PendingIntent.getBroadcast(context, 0, left_intent, PendingIntent.FLAG_CANCEL_CURRENT);
         PendingIntent pendingIntent_R = PendingIntent.getBroadcast(context, 0, right_intent, PendingIntent.FLAG_CANCEL_CURRENT);
         PendingIntent pendingIntent_C = PendingIntent.getBroadcast(context, 0, click_intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent pendingIntent_D = PendingIntent.getActivity(context, 0, call_intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        updateViews.setOnClickPendingIntent(R.id.call_button, pendingIntent_D);
         updateViews.setOnClickPendingIntent(R.id.left_button, pendingIntent_L);
         updateViews.setOnClickPendingIntent(R.id.right_button, pendingIntent_R);
         updateViews.setOnClickPendingIntent(R.id.widget_click, pendingIntent_C);

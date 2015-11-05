@@ -59,7 +59,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        make_dummy();
+        if(ThemaItem.isEmpty()) {
+            make_dummy(); }
         Intent a = new Intent(this, GpsService.class);
         startService(a);
 
@@ -71,7 +72,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             rA.registerInit();
             rA.registerWT("Weather.a");
         }
-        rA.testAM("ACTION.GET.ONE",14,27);
+        rA.testAM("ACTION.GET.ONE",18,23);
 
         //바인딩
         actionbar = getActionBar();
@@ -335,6 +336,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
             item.category = "(X)category"+i;
             item.address = "(X)address"+i;
             item.imageUrl = "http://cfile72.uf.daum.net/image/2125083751B7EEB80E8ECC";
+            item.phone = "010-2043-5392";
             wg.add(item);
         }
         ThemaItem = wg;
